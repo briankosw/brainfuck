@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 
 
 class BrainFuck:
@@ -39,7 +40,10 @@ class BrainFuck:
             elif op == "]":
                 idx = bracket_stack.pop()[1] - 1
             elif op == ",":
-                ...
+                try:
+                    self.mem[self.ptr] = ord(sys.stdin.read(1))
+                except:
+                    ...
             elif op == ".":
                 print(chr(self.mem[self.ptr]), end="")
             idx += 1
