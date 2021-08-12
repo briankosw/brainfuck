@@ -4,14 +4,14 @@ After finding this [instructive Nim tutorial](https://howistart.org/posts/nim/1/
 
 
 # Instruction
-There's a couple brainfuck scripts in the `brainfuck` directory. To run one of the scripts:
-- Python: `python brainfuck.py brainfuck/helloworld.b`
-- Nim: `nim c -d:release -r brainfuck.nim brainfuck/helloworld.b`
+There are a few brainfuck scripts in the `examples` directory. To run one of the scripts:
+- Python: `python brainfuck.py examples/helloworld.b`
+- Nim: `nim c -d:release -r brainfuck.nim examples/helloworld.b`
 
 # Comparision
-Here is a speed comparison between the different implementations when running `brainfuck/mandelbrot.b` on my banged-up MacBook Pro with shitty stickers on it:
+Here is a speed comparison between the different implementations when running `examples/mandelbrot.b` on my banged-up MacBook Pro with shitty stickers on it:
 
-| Implementation | Speed (HH:MM:SS) |
-|:-------------- | ----------------:|
-| Python         |         02:00:00 |
-| Nim            |         00:01:34 |
+| Implementation  | Speed (HH:MM:SS) |
+|:--------------- | ----------------:|
+| Python(CPython) |         02:00:00 |
+| Nim             |         00:01:34 |
