@@ -51,7 +51,7 @@ class BrainFuck:
 
 def create_parser():
     parser = argparse.ArgumentParser(description="Brainfuck interpreter written in Python")
-    parser.add_argument("-n", "--num-mem-blocks", type=int, help="the number of memory blocks", default=30000)
+    parser.add_argument("-n", "--num-mem-blocks", type=int, help="the number of memory blocks (default=30000)", default=30000)
     parser.add_argument("file", type=str, help="the brainfuck file to run")
     return parser
 

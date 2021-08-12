@@ -1,6 +1,6 @@
-proc interpret*(code: string) = 
+proc interpret*(code: string, tapeLen: int) = 
   var
-    tape: seq[char] = newSeq[char]()
+    tape: seq[char] = newSeq[char](tapeLen)
     codePos: int = 0
     tapePos: int = 0
   
@@ -8,11 +8,10 @@ proc interpret*(code: string) =
   proc xinc(c: var char) = inc c
   proc xdec(c: var char) = dec c
   {.pop.}
+
   
   proc run(skip = false): bool =
     while tapePos >= 0 and codePos < code.len:
-      if tapePos >= tape.len:
-        tape.add '\0'
       if code[codePos] == '[':
         inc codePos
         let oldPos = codePos
@@ -35,9 +34,23 @@ proc interpret*(code: string) =
   discard run()
 
 when isMainModule:
-  import os
+  import docopt
+  import strutils
 
-  let code = if paramCount() > 0: readFile paramStr(1)
-             else: readAll stdin
+  let doc = """
+  Brianfuck interpreter written in Nim
 
-  interpret code
+  Usage:
+    brainfuck <file> [--num-mem-blocks=<n>]
+    brainfuck -h | --help
+
+  Options:
+    -h --help                    Show this screen.
+    -n=<n> --num-mem-blocks=<n>  Number of memory blocks [default: 30000].
+  """
+
+  let args = docopt(doc)
+
+  let code = readFile $args["<file>"]
+
+  interpret code, parseInt($args["--num-mem-blocks"])
