@@ -1,4 +1,4 @@
-# brainfuck
+# Brainfuck
 
 After finding this [instructive Nim tutorial](https://howistart.org/posts/nim/1/index.html) that demonstrates Nim's features by implemeting a brainfuck interpreter, I decided to have some fun and implement a brainfuck interpreter in different programming langauges.
 
@@ -15,3 +15,8 @@ Here is a speed comparison between the different implementations when running `e
 |:--------------- | ----------------:|
 | Python(CPython) |         02:00:00 |
 | Nim             |         00:01:34 |
+
+# Brainfuck References
+While brainfuck is not a practical programming language, I found myself enjoying it! Here are some helpful references for learning about brainfuck:
+- [Basics of BrainFuck](https://gist.github.com/roachhd/dce54bec8ba55fb17d3a)
+- [brainfuck - Esolang](https://esolangs.org/wiki/Brainfuck)
