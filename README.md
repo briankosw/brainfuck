@@ -11,10 +11,11 @@ There are a few brainfuck scripts in the `examples` directory. To run one of the
 # Comparision
 Here is a speed comparison between the different implementations when running `examples/mandelbrot.b` on my banged-up MacBook Pro with shitty stickers on it:
 
-| Implementation  | Speed (HH:MM:SS) |
-|:--------------- | ----------------:|
-| Python(CPython) |         02:00:00 |
-| Nim             |         00:01:34 |
+| Implementation   | Speed (HH:MM:SS) |
+|:---------------- | ----------------:|
+| Python (CPython) |         02:00:00 |
+| Nim              |         00:01:34 |
+| Nim (AST)        |         00:00:04 |
 
 # Brainfuck References
 While brainfuck is not a practical programming language, I found myself enjoying it! Here are some helpful references for learning about brainfuck:
